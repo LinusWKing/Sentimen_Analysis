@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sentiment Analysis</title>
+  </head>
+
+  <body style="margin: auto;">
+    <form id="form" action="{{ url_for('predict')}}" method="POST">
+      <div style="text-align: center;">
+        <h2>
+          <b>Put your Review Here</b>
+        </h2>
+
+        <textarea rows="10" cols="80" id="comment" name="text"></textarea>
+        
+      </div>
+      <br>
+      <div style="text-align: center;">
+      <button style="margin: auto;" type="submit">Predict</button>
+    </div>
+    </form>
+
+    <br />
+    <br />
+    <div style="text-align: center; font-size: large;">
+      Result: {{ prediction_text }}
+
+    </div>
+   
+  </body>
+</html>
