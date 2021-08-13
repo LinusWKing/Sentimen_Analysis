@@ -5,7 +5,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras import backend as K
 
 with open('tokenizer.pickle', 'rb') as handle:
-    tokenizer = pickle.load(handle)
+    tokenizer = pickle.load(handle)  # Load tokenizer
 
 
 app = Flask(__name__)
@@ -19,7 +19,7 @@ def index():
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
 
-    model = load_model('model.h5')
+    model = load_model('model.h5')  # Load model
 
     if request.method == 'POST':
         namequery = request.form['text']
@@ -37,8 +37,6 @@ def predict():
 
         K.clear_session()
     return render_template('index.html', prediction_text=sentiment)
-
-    # K.clear_session()
 
 
 if __name__ == '__main__':
