@@ -109,13 +109,12 @@ def text_preprocessing(dataset):
               for word in dataset.review_text]  # Tokenize the data
 
     # Check and correct spelling errors
-    '''
+
     spell = SpellChecker()
     for i in range(len(tokens)):
         for j, token in enumerate(tokens[i]):
             if token not in spell:
                 tokens[i][j] = spell.correction(token)
-    '''
 
     # Lemmatize our tokens
     lemmatizer = WordNetLemmatizer()
