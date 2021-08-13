@@ -108,7 +108,7 @@ def text_preprocessing(dataset):
     tokens = [word_tokenize(word)
               for word in dataset.review_text]  # Tokenize the data
 
-    # Check and correct spelling errors
+    # Check and correct spelling errors. Consider commenting out as it takes a while.
 
     spell = SpellChecker()
     for i in range(len(tokens)):
