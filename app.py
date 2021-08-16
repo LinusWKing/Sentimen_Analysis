@@ -4,7 +4,7 @@ from keras_preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import load_model
 from tensorflow.keras import backend as K
 
-with open('tokenizer.pickle', 'rb') as handle:
+with open('models/tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)  # Load tokenizer
 
 
@@ -19,7 +19,7 @@ def index():
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
 
-    model = load_model('model.h5')  # Load model
+    model = load_model('models/model.h5')  # Load model
 
     if request.method == 'POST':
         namequery = request.form['text']

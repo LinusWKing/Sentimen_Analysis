@@ -6,20 +6,28 @@
     <title>Sentiment Analysis</title>
   </head>
 
-  <body>
+  <body style="margin: auto;">
     <form id="form" action="{{ url_for('predict')}}" method="POST">
-      <div>
+      <div style="text-align: center;">
         <h2>
-          <i><b>Put your Review Here</b></i>
+          <b>Put your Review Here</b>
         </h2>
 
-        <textarea rows="11" id="comment" name="text"></textarea>
+        <textarea rows="10" cols="80" id="comment" name="text"></textarea>
+        
       </div>
-      <button type="submit">Predict</button>
+      <br>
+      <div style="text-align: center;">
+      <button style="margin: auto;" type="submit">Predict</button>
+    </div>
     </form>
 
     <br />
     <br />
-    {{ prediction_text }}
+    <div style="text-align: center; font-size: large;">
+      Result: {{ prediction_text }}
+
+    </div>
+   
   </body>
 </html>
