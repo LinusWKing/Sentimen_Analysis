@@ -1,7 +1,5 @@
 # Sentiment_Analysis
 
-# Sentiment-Analysis
-
 Sentiment Analysis using Bidirectional RNNs
 
 ## Installing
