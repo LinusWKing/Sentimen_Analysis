@@ -60,13 +60,13 @@ def text_preprocessing(dataset):
               for word in dataset.review_text]  # Tokenize the data
 
     # Check and correct spelling errors. Consider commenting out as it takes a while.
-    '''
+
     spell = SpellChecker()
     unknown = [spell.unknown(t) for t in tokens]
     for i, token in enumerate(unknown):
         if token:
             tokens[i] = [spell.correction(token)for token in tokens[i]]
-    '''
+
     # Lemmatize our tokens
     lemmatizer = WordNetLemmatizer()
     dataset['review_text'] = [
