@@ -20,6 +20,8 @@ https://github.com/LinusWKing/Sentiment_Analysis.git
 pip install -r requirements.txt
 ```
 
+Find the original dataset [here](http://www.cs.jhu.edu/~mdredze/datasets/sentiment/index2.html)
+
 ## Usage
 
 On a terminal in the same folder as the application
