@@ -1,3 +1,4 @@
+# Contributed by Linus Wahome
 import pickle
 
 import pandas as pd
@@ -33,7 +34,7 @@ def encode_rating(ds):
         {1: 'negative', 2: 'negative', 4: 'positive', 5: 'positive'}, inplace=True)
     ds['rating'].replace({"negative": 0, "positive": 1}, inplace=True)
 
-# Encode our reviews
+# Encode our reviews as vectors
 
 
 def encode_review(x, tokenizer):
@@ -52,7 +53,7 @@ def train(ds):
     y = ds['rating']
 
     x_train, x_val, y_train, y_val = train_test_split(
-        x, y, test_size=0.33, random_state=42)
+        x, y, test_size=0.33, random_state=42)  # Split our data
 
     tokenizer = Tokenizer()
     tokenizer.fit_on_texts(x)

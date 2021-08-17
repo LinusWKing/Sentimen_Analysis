@@ -1,3 +1,4 @@
+# Contributed by Linus Wahome
 from flask import Flask, render_template, request
 import pickle
 from keras_preprocessing.sequence import pad_sequences
@@ -25,10 +26,11 @@ def predict():
         namequery = request.form['text']
         data = [namequery]
 
-        x_seq = tokenizer.texts_to_sequences(data)
+        x_seq = tokenizer.texts_to_sequences(data)  # Vectorize input data
+        # Pad the vectorized data
         encoded = pad_sequences(x_seq, maxlen=1000, padding='post')
 
-        prediction = model.predict(encoded)
+        prediction = model.predict(encoded)  # Predict
 
         if prediction[0] >= 0.0:
             sentiment = 'Positive'

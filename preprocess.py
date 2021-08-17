@@ -1,3 +1,4 @@
+# Contributed by Diana Ladaniak
 import re
 import string
 
@@ -13,7 +14,7 @@ nltk.download('wordnet')
 stop = stopwords.words('english')
 
 
-df = pd.read_pickle('models/df_data.pkl')
+df = pd.read_pickle('models/df_data.pkl')  # Load saved dataframe
 
 
 # Process our dataframe
