@@ -1,8 +1,10 @@
-# Process our input to allow for Xml parsing
+
 import os
 import string
 
 import pandas as pd
+
+# Process our input to allow for Xml parsing
 
 
 def process_text(text):
@@ -47,4 +49,4 @@ def parse_xml(path):
 
 
 df = load_data()
-df.to_pickle('models/df_data.pkl')
+df.to_pickle('models/df_data.pkl')  # Save dataframe externally
