@@ -52,7 +52,7 @@ def train(ds):
     y = ds['rating']
 
     x_train, x_val, y_train, y_val = train_test_split(
-        x, y, test_size=0.33, random_state=42, stratify=y)
+        x, y, test_size=0.33, random_state=42)
 
     tokenizer = Tokenizer()
     tokenizer.fit_on_texts(x)
@@ -70,12 +70,12 @@ def train(ds):
                         1000)  # Instaniate the model
 
     model.compile(loss=losses.BinaryCrossentropy(from_logits=True),
-                  optimizer=optimizers.Adam(), metrics=['accuracy'])  # Configure
+                  optimizer=optimizers.Adam(learning_rate=1e-4), metrics=['accuracy'])  # Configure
     model.summary()
 
     callbacks = EarlyStopping(monitor='val_loss', min_delta=1e-2, patience=1)
 
-    model.fit(x_train, y_train, batch_size=64,
+    model.fit(x_train, y_train, batch_size=32,
               validation_data=(x_val, y_val), callbacks=callbacks,
               epochs=10, shuffle=True)  # Train
 
