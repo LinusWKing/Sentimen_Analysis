@@ -26,7 +26,7 @@ def predict():
         data = [namequery]
 
         x_seq = tokenizer.texts_to_sequences(data)
-        encoded = pad_sequences(x_seq, maxlen=1500, padding='post')
+        encoded = pad_sequences(x_seq, maxlen=1000, padding='post')
 
         prediction = model.predict(encoded)
 
